@@ -1,0 +1,104 @@
+:root {
+    --primary: #8b4513;
+    --accent: #d2a679;
+    --bg: #fdfaf6;
+    --white: #ffffff;
+    --fav-gold: #ffd700;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); margin: 0; color: #333; scroll-behavior: smooth; }
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+#searchBar { flex-grow: 1; padding: 12px 20px; border-radius: 25px; border: none; outline: none; }
+
+.jump-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 0 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.recipe-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--accent);
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.recipe-card.is-fav {
+    border-top: 6px solid var(--fav-gold);
+    background-color: #fffdf0;
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+
+.fav-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0; }
+
+.card-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    flex-wrap: wrap;
+}
+
+.edit-btn, .delete-btn, .share-btn {
+    flex: 1; padding: 8px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+}
+
+.edit-btn { background: #f3f4f6; color: var(--primary); }
+.delete-btn { background: #fee2e2; color: #ef4444; }
+.share-btn { background: #e0f2fe; color: #0369a1; }
+
+.form-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#recipeForm input, #recipeForm textarea {
+    width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+}
+
+#recipeForm button {
+    background: var(--primary); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+}
+
+.divider { border: 0; height: 1px; background: #ddd; margin: 60px 0; }

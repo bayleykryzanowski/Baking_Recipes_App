@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayley’s Favourite Baking Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bayley’s Favourite Baking Recipes</h1>
+        <div class="header-controls">
+            <input type="text" id="searchBar" placeholder="Search by name or ingredient..." oninput="filterRecipes()">
+            <button onclick="document.getElementById('add-section').scrollIntoView({behavior: 'smooth'})" class="jump-btn">＋ Add New</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="display-section">
+            <div id="recipeList" class="recipe-grid"></div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="add-section" class="form-section">
+            <div class="form-card">
+                <h2>Add a New Creation</h2>
+                <form id="recipeForm">
+                    <input type="text" id="title" placeholder="Recipe Title" required>
+                    <input type="number" id="prepTime" placeholder="Prep Time (mins)" required>
+                    <textarea id="ingredients" placeholder="Ingredients (separate with commas)" required></textarea>
+                    <textarea id="steps" placeholder="Baking steps..." required></textarea>
+                    <button type="submit" id="submitBtn">Save to My Collection</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
