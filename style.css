@@ -1,13 +1,14 @@
+/* CSS Variables for Theming */
 :root {
-    --primary: #8b4513;
+    --primary: #522809;
     --accent: #d2a679;
     --bg: #fdfaf6;
     --white: #ffffff;
     --fav-gold: #ffd700;
 }
-
+/* Global Styles */
 body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); margin: 0; color: #333; scroll-behavior: smooth; }
-
+/* Header Styles */
 header {
     background: var(--primary);
     color: white;
@@ -18,7 +19,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
+/* Header Controls */
 .header-controls {
     display: flex;
     justify-content: center;
@@ -26,9 +27,9 @@ header {
     max-width: 700px;
     margin: 1rem auto 0;
 }
-
+/* Search Bar Styles */
 #searchBar { flex-grow: 1; padding: 12px 20px; border-radius: 25px; border: none; outline: none; }
-
+/* Jump Button Styles */
 .jump-btn {
     background: var(--accent);
     border: none;
@@ -38,16 +39,16 @@ header {
     cursor: pointer;
     font-weight: bold;
 }
-
+/* Main Container */
 .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-
+/* Recipe Grid Styles */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 25px;
     margin-bottom: 50px;
 }
-
+/* Recipe Card Styles */
 .recipe-card {
     background: var(--white);
     padding: 25px;
@@ -64,9 +65,9 @@ header {
 }
 
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-
+/* Favorite Button Styles */
 .fav-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0; }
-
+/* Recipe Title Styles */
 .card-actions {
     margin-top: 20px;
     display: flex;
@@ -75,11 +76,11 @@ header {
     padding-top: 15px;
     flex-wrap: wrap;
 }
-
+/* Action Button Styles */
 .edit-btn, .delete-btn, .share-btn {
     flex: 1; padding: 8px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
 }
-
+/* Individual Action Button Colors */
 .edit-btn { background: #f3f4f6; color: var(--primary); }
 .delete-btn { background: #fee2e2; color: #ef4444; }
 .share-btn { background: #e0f2fe; color: #0369a1; }
@@ -92,13 +93,13 @@ header {
     margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-
+/* Form Styles */
 #recipeForm input, #recipeForm textarea {
     width: 100%; margin-bottom: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
 }
-
+/* Form Button Styles */
 #recipeForm button {
     background: var(--primary); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
 }
-
+/* Divider Styles */
 .divider { border: 0; height: 1px; background: #ddd; margin: 60px 0; }

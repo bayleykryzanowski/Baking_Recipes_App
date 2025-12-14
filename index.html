@@ -6,6 +6,7 @@
     <title>Bayley’s Favourite Baking Recipes</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Body Content -->
 <body>
     <header>
         <h1>Bayley’s Favourite Baking Recipes</h1>
@@ -14,7 +15,7 @@
             <button onclick="document.getElementById('add-section').scrollIntoView({behavior: 'smooth'})" class="jump-btn">＋ Add New</button>
         </div>
     </header>
-
+<!-- Main Content Area -->
     <main class="container">
         <section class="display-section">
             <div id="recipeList" class="recipe-grid"></div>
@@ -24,7 +25,8 @@
 
         <section id="add-section" class="form-section">
             <div class="form-card">
-                <h2>Add a New Creation</h2>
+                <h2>Add a New Creation</h2> 
+                <!--Allows for addition of own recipes with attributes title, prepTime, ingredients and steps--> 
                 <form id="recipeForm">
                     <input type="text" id="title" placeholder="Recipe Title" required>
                     <input type="number" id="prepTime" placeholder="Prep Time (mins)" required>
@@ -35,7 +37,7 @@
             </div>
         </section>
     </main>
-
+<!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>

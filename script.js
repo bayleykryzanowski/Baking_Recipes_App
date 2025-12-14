@@ -1,4 +1,4 @@
-// 1. Initial Data
+//  Initial Data: Hardcoded Starter Recipes Cannot be Deleted/Edited
 const starterRecipes = [
     { id: "s1", title: "Bayley's Signature Sourdough", prepTime: 120, ingredients: "500g Bread Flour, 350g Water, 10g Salt", steps: "Mix, stretch and fold, proof overnight, bake at 230°C.", favorite: false },
     { id: "s2", title: "Golden Lemon Drizzle Cake", prepTime: 45, ingredients: "225g Butter, 225g Sugar, 4 Eggs, 2 Lemons", steps: "Cream butter/sugar. Bake 180°C. Pour syrup over while warm.", favorite: false },
@@ -8,13 +8,13 @@ const starterRecipes = [
 
 let customRecipes = JSON.parse(localStorage.getItem('bayleyCustomRecipes')) || [];
 
-// 2. Display Function
+//  Display Function
 function displayRecipes(recipeArray) {
     const list = document.getElementById('recipeList');
     if (!list) return;
     list.innerHTML = '';
 
-    // Sort: Favorites first
+    // Sort: Favorites Bring to Top
     const sortedArray = [...recipeArray].sort((a, b) => b.favorite - a.favorite);
 
     sortedArray.forEach(recipe => {
@@ -41,7 +41,7 @@ function displayRecipes(recipeArray) {
     });
 }
 
-// 3. Action Logic
+//  Action Logic
 window.toggleFavorite = function(id) {
     let recipe = customRecipes.find(r => r.id == id) || starterRecipes.find(r => r.id == id);
     if (recipe) {
@@ -50,7 +50,7 @@ window.toggleFavorite = function(id) {
         displayRecipes([...starterRecipes, ...customRecipes]);
     }
 };
-
+// Delete, Edit, Share
 window.deleteRecipe = function(id) {
     if (confirm("Delete this recipe?")) {
         customRecipes = customRecipes.filter(r => r.id != id);
@@ -80,7 +80,7 @@ window.shareRecipe = function(id) {
     }
 };
 
-// 4. Form & Search
+//  Form & Search
 document.getElementById('recipeForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const newRecipe = {
