@@ -1,6 +1,7 @@
 🧁 Bayley’s Favourite Baking Recipes
 A full-stack web application designed to help home bakers track their favorite creations, discover daily baking tips, and share recipes with friends.
 
+
 🛠️ Features
 Recipe Management: Create, view, edit, and delete baking recipes.
 
@@ -21,8 +22,6 @@ Ensure you have Node.js installed (LTS version recommended).
 2. Project Structure
 Ensure your files are organized as follows:
 
-Plaintext
-
 bayley-baking-app/
 ├── public/              # Frontend files
 │   ├── index.html
@@ -32,19 +31,20 @@ bayley-baking-app/
 ├── recipes.json         # Local Database (JSON)
 ├── package.json         # Project dependencies
 └── README.md            # This documentation
+
 3. Install Dependencies
 Open your terminal in the root directory and run:
 
-Bash
-
 npm install express axios cors
+
 4. Run the Application
+   
 Start the server by running:
 
-Bash
-
 node server.js
+
 5. Access the App
+   
 Open your browser and navigate to: http://localhost:3000
 
 🏗️ Technical Details
