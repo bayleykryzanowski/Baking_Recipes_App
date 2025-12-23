@@ -1,0 +1,154 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary: #8b4513;    
+    --secondary: #d2a679;  
+    --accent: #fcc419;     
+    --bg: #fdfaf6;         
+    --white: #ffffff;
+    --text: #3e2723;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* --- Header & Search --- */
+header {
+    background: var(--primary);
+    background: linear-gradient(135deg, #8b4513 0%, #5d2e0a 100%);
+    color: white;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+}
+
+#searchBar {
+    flex-grow: 1;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.jump-btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.jump-btn:hover { background: #b88a5d; }
+
+/* --- Main Layout --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* --- Tip Box (External API Data) --- */
+.tip-box {
+    background: #fff9db;
+    border-left: 6px solid var(--accent);
+    padding: 20px;
+    margin: 20px auto 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tip-icon { font-size: 2rem; }
+#baking-tip { margin: 0; font-style: italic; color: #5c5f66; }
+
+/* --- Recipe Grid --- */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.recipe-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid var(--secondary);
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover { transform: translateY(-5px); }
+.recipe-card.is-fav { border-top-color: var(--accent); background-color: #fffdf0; }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.badge { background: #fdf2e9; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+.fav-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+.time-tag { color: var(--secondary); font-weight: bold; font-size: 0.9rem; margin: 10px 0; }
+.card-content { font-size: 0.9rem; color: #555; }
+.card-content strong { display: block; margin-top: 15px; color: var(--primary); }
+
+.card-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.edit-btn, .share-btn, .delete-btn {
+    flex: 1; padding: 8px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.8rem;
+}
+
+.edit-btn { background: #f3f4f6; color: var(--primary); }
+.share-btn { background: #e0f2fe; color: #0369a1; }
+.delete-btn { background: #fee2e2; color: #ef4444; }
+
+/* --- Form Styling --- */
+.form-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 650px;
+    margin: 60px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#recipeForm label { display: block; margin-top: 15px; font-weight: bold; font-size: 0.9rem; }
+#recipeForm input, #recipeForm textarea {
+    width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+}
+
+#recipeForm button {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.divider { border: 0; height: 1px; background: #ddd; margin: 80px 0; }
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .header-controls { flex-direction: column; }
+    .jump-btn { padding: 12px; }
+}

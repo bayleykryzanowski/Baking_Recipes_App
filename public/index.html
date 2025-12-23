@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayley’s Favourite Baking Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bayley’s Favourite Baking Recipes</h1>
+        <div class="header-controls">
+            <input type="text" id="searchBar" placeholder="Search by cake name or ingredient..." oninput="filterRecipes()">
+            <button onclick="document.getElementById('add-section').scrollIntoView({behavior: 'smooth'})" class="jump-btn">＋ Add New Recipe</button>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="tip-container" class="tip-box">
+            <span class="tip-icon">💡</span>
+            <div>
+                <small style="font-weight: bold; text-transform: uppercase; color: #fcc419;">Tip of the Day</small>
+                <p id="daily-tip">Fetching a fresh baking tip for you...</p>
+            </div>
+        </section>
+
+        <section class="display-section">
+            <div id="recipeList" class="recipe-grid">
+                </div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="add-section" class="form-section">
+            <div class="form-card">
+                <h2 id="form-title">Add a New Recipe</h2>
+                <p style="color: #666; margin-bottom: 20px;">Fill out the details below to save your recipe to the server.</p>
+                
+                <form id="recipeForm">
+                    <label for="title">Recipe Name</label>
+                    <input type="text" id="title" placeholder="e.g., Grandma's Victoria Sponge" required>
+                    
+                    <label for="prepTime">Preparation Time (minutes)</label>
+                    <input type="number" id="prepTime" placeholder="e.g., 45" required>
+                    
+                    <label for="ingredients">Ingredients</label>
+                    <textarea id="ingredients" placeholder="List your ingredients (e.g., 200g Flour, 3 Eggs, 200g Butter...)" required></textarea>
+                    
+                    <label for="steps">Baking Method</label>
+                    <textarea id="steps" placeholder="Describe the steps to bake this masterpiece..." required></textarea>
+                    
+                    <button type="submit" id="submitBtn">Save Recipe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: #8b4513; font-weight: bold;">
+        <p>Bayley’s Baking Tracker &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
